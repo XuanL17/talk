@@ -4,42 +4,80 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Talks — Xuan Liu</title>
-<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/fonts.css">
 <style>
-  :root { --cobra:#5BA898; --cobra-dark:#4A8E7E; --ink:#1f2937; --muted:#6b7280; --card:#f8f8f8; --bg:#ffffff; }
-  @media (prefers-color-scheme: dark) { :root { --ink:#e5e7eb; --muted:#9ca3af; --card:#1f2933; --bg:#111827; } }
-  body { margin:0; background:var(--bg); color:var(--ink); font-family:"Comic Neue", cursive; }
-  main { max-width:760px; margin:0 auto; padding:56px 16px; }
-  h1 { font-size:36px; margin:0 0 6px; }
-  p.sub { color:var(--muted); margin:0 0 32px; font-size:18px; }
-  a.talk { display:block; padding:18px 22px; margin-bottom:14px; background:var(--card); border-radius:12px; border-top:4px solid var(--cobra); color:inherit; text-decoration:none; }
-  a.talk:hover { border-top-color:var(--cobra-dark); }
-  .t { font-size:22px; font-weight:700; }
-  .m { color:var(--muted); font-size:16px; margin-top:4px; }
-  .soon { opacity:.55; pointer-events:none; }
+  :root {
+    color-scheme: light;
+    --ink: #203746;
+    --muted: #4b6577;
+    --line: #20374625;
+    --font: 'Bodoni Moda', 'Songti SC', STSong, serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(115deg, #e4eff8 0%, #d5e6f3 52%, #c2d9eb 100%);
+    background-attachment: fixed;
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 5px; }
+  a:focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+  .shell { max-width: 880px; margin: 0 auto; padding: 0 16px 64px; }
+  header {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 100px; border-bottom: 1px solid var(--line);
+  }
+  .monogram { font-size: 1.875rem; font-style: italic; line-height: 1; letter-spacing: -1px; }
+  .monogram span { font-size: 1.125rem; opacity: .5; margin-left: 8px; font-style: normal; }
+  header nav a { font-size: 1rem; color: var(--muted); }
+  h1 { font-size: 3rem; font-weight: 400; line-height: 1.12; letter-spacing: -.03em; margin: 56px 0 8px; }
+  .label {
+    font-family: 'Manrope', sans-serif; font-size: .75rem; font-weight: 500;
+    letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 8px;
+  }
+  ul { list-style: none; margin: 32px 0 0; padding: 0; }
+  li { padding: 22px 0; border-top: 1px solid var(--line); }
+  li:last-child { border-bottom: 1px solid var(--line); }
+  .meta { font-size: .875rem; line-height: 1.5; color: var(--muted); }
+  .title { display: block; font-size: 1.375rem; line-height: 1.35; margin-top: 4px; }
+  @media (max-width: 560px) { h1 { font-size: 2.25rem; } .title { font-size: 1.2rem; } }
 </style>
 </head>
 <body>
-<main>
+<div class="shell">
+  <header>
+    <a class="monogram" href="https://xuanl17.github.io/">Xuan Liu<span>刘萱</span></a>
+    <nav><a href="https://xuanl17.github.io/">Home ↗</a></nav>
+  </header>
+
   <h1>Talks</h1>
-  <p class="sub">Xuan Liu · UC San Diego · <a href="https://xuanl17.github.io" style="color:var(--cobra-dark)">xuanl17.github.io</a></p>
-  <a class="talk" href="calibration-jingbolab261113/">
-    <div class="t">Building Closed-Loop Calibration for Behavior Simulation</div>
-    <div class="m">UC San Diego · Nov 13, 2026</div>
-  </a>
-  <a class="talk" href="humanlikeai-wh_hn260625_26/">
-    <div class="t">We Build Human-like AI</div>
-    <div class="m">HUST · Jun 25, 2026</div>
-    <div class="m">Remote · Jun 26, 2026</div>
-  </a>
-  <a class="talk" href="cobra-chi260414/">
-    <div class="t">CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments</div>
-    <div class="m">CHI 2026, Barcelona · Apr 14, 2026</div>
-  </a>
-  <a class="talk" href="humanstudybench-nice260314/">
-    <div class="t">HumanStudy-Bench: Towards AI Agent Design for Participant Simulation</div>
-    <div class="m">NICE · Mar 14, 2026</div>
-  </a>
-</main>
+  <p class="label">Slides, newest first</p>
+
+  <ul>
+    <li>
+      <div class="meta">Nov 13, 2026 · UC San Diego</div>
+      <a class="title" href="calibration-jingbolab261113/">Building Closed-Loop Calibration for Behavior Simulation</a>
+    </li>
+    <li>
+      <div class="meta">Jun 26, 2026 · Remote</div>
+      <div class="meta">Jun 25, 2026 · HUST</div>
+      <a class="title" href="humanlikeai-wh_hn260625_26/">We Build Human-like AI</a>
+    </li>
+    <li>
+      <div class="meta">Apr 14, 2026 · CHI 2026, Barcelona</div>
+      <a class="title" href="cobra-chi260414/">CoBRA: Programming Cognitive Bias in Social Agents Using Classic Social Science Experiments</a>
+    </li>
+    <li>
+      <div class="meta">Mar 14, 2026 · NICE</div>
+      <a class="title" href="humanstudybench-nice260314/">HumanStudy-Bench: Towards AI Agent Design for Participant Simulation</a>
+    </li>
+  </ul>
+</div>
 </body>
 </html>
