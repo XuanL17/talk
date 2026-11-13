@@ -1,0 +1,62 @@
+<!-- ============ WHY HARD ============ -->
+<div class="slide" data-slide="t-whyhard" data-rw="1280" data-rh="720" data-notes="Why can't we just build a verifier for human behavior? Two reasons. First, human data is scarce: running studies is slow and expensive, needs IRB, samples are small, and data is rarely shared in a reusable form. Second, there is no single right answer. A person isn't a math problem — behavior is a distribution that varies across people and contexts. The 'correct' answer only exists at the level of effects and distributions: does the framing effect show up, and how big is it? So the field has mostly relied on 'it looks plausible'.">
+<h4 style="font-size:38px;">Why Is There No Verifier for Human Behavior?</h4>
+<div style="margin-top:50px; display:flex; gap:30px;">
+  <div style="flex:1; padding:26px 28px; background:#f8f8f8; border-radius:10px; border-top:4px solid #FBBF24;">
+    <div style="font-size:64px; font-weight:700; color:#B8860B; line-height:1;">1</div>
+    <div style="font-weight:700; font-size:34px; color:rgb(51,51,51); margin:10px 0 10px;">Scarce human data</div>
+    <div style="font-size:24px; color:rgb(102,102,102); line-height:1.5;">Studies are slow, costly, IRB-bound, small-sample — and rarely shared in reusable form.</div>
+  </div>
+  <div style="flex:1; padding:26px 28px; background:#f8f8f8; border-radius:10px; border-top:4px solid #FBBF24;">
+    <div style="font-size:64px; font-weight:700; color:#B8860B; line-height:1;">2</div>
+    <div style="font-weight:700; font-size:34px; color:rgb(51,51,51); margin:10px 0 10px;">No single right answer</div>
+    <div style="font-size:24px; color:rgb(102,102,102); line-height:1.5;">Behavior is a <strong>distribution</strong> across people and contexts; "correct" lives at the level of effects.</div>
+  </div>
+</div>
+<div class="cobra-fragment">
+<div style="margin-top:40px; text-align:center; font-size:34px; color:rgb(85,85,85);">→ No verifier → <strong>no closed loop</strong> → "looks plausible".</div>
+</div>
+</div>
+
+<!-- ============ DATA HELPS ============ -->
+<div class="slide" data-slide="t-datahelps" data-rw="1280" data-rh="720" data-notes="And when we do put real human data into the loop, things get much better. Centaur, published in Nature this year, fine-tuned Llama on Psych-101: 160 experiments, about 60 thousand participants, over 10 million choices — and it predicts held-out participants better than classic cognitive models. Park and colleagues built agents for 1,052 real people from in-depth interviews, and they replicate people's survey answers 85 percent as well as people replicate themselves two weeks later. So the bottleneck is not that human behavior is unlearnable — it's the missing human-grounded loop.">
+<h4 style="font-size:38px;">When Human Data Enters the Loop, Agents Improve</h4>
+<div style="margin-top:46px; display:flex; gap:30px;">
+  <div style="flex:1; padding:24px 26px; background:#E8F5F0; border-radius:10px; border-top:4px solid var(--cobra);">
+    <div style="font-size:30px; font-weight:800; color:rgb(51,51,51);">Centaur <span style="font-size:20px; color:var(--g500); font-weight:400;">Nature 2025</span></div>
+    <div style="margin-top:14px; font-size:24px; color:rgb(51,51,51); line-height:1.5;">Fine-tuned on <strong>Psych-101</strong>: 160 experiments, 60K participants, 10.7M choices.</div>
+    <div style="margin-top:12px; font-size:24px; color:#4A8E7E; font-weight:700;">Beats cognitive models on held-out participants.</div>
+  </div>
+  <div style="flex:1; padding:24px 26px; background:#E8F5F0; border-radius:10px; border-top:4px solid var(--cobra);">
+    <div style="font-size:30px; font-weight:800; color:rgb(51,51,51);">1,000 People <span style="font-size:20px; color:var(--g500); font-weight:400;">Park et al. 2024</span></div>
+    <div style="margin-top:14px; font-size:24px; color:rgb(51,51,51); line-height:1.5;">Agents built from <strong>in-depth interviews</strong> with 1,052 real people.</div>
+    <div style="margin-top:12px; font-size:24px; color:#4A8E7E; font-weight:700;">85% as accurate as people's own 2-week test–retest on GSS.</div>
+  </div>
+</div>
+<div class="cobra-fragment">
+<div style="margin-top:36px; text-align:center; font-size:32px; color:rgb(85,85,85);">The bottleneck is the <strong>missing human-grounded loop</strong>, not the model.</div>
+</div>
+<div class="citation">Binz et al. (2025). A foundation model to predict and capture human cognition. <em>Nature</em> 644. · Park et al. (2024). Generative Agent Simulations of 1,000 People. arXiv:2411.10109.</div>
+</div>
+
+<!-- ============ THESIS ============ -->
+<div class="slide" data-slide="t-thesis" data-rw="1280" data-rh="720" data-notes="So here's what we believe. Social science has spent a century building exactly the verifier we need: classic, validated experiments. Each one gives a protocol, real human results, and a statistical test. If we operationalize them as environments, they become calibration tasks — the human-behavior counterpart of unit tests. CoBRA is our first instance of this idea, so let me go into it in detail.">
+<h4 style="font-size:38px;">Our View: Experiments Are the <span style="color:var(--cobra);">Verifiers</span> for Human Behavior</h4>
+<div style="margin-top:40px; display:flex; flex-direction:column; gap:16px; width:88%;">
+  <div style="padding:14px 22px; background:#E8F5F0; border-left:4px solid var(--cobra-mint); border-radius:8px;">
+    <div style="font-weight:700; color:rgb(51,51,51); font-size:30px;">Protocol</div>
+    <div style="font-size:23px; color:var(--g600);">Exact instructions, stimuli, conditions — like a well-posed problem.</div>
+  </div>
+  <div style="padding:14px 22px; background:#E0F0EA; border-left:4px solid #4A8E7E; border-radius:8px;">
+    <div style="font-weight:700; color:rgb(51,51,51); font-size:30px;">Human ground truth</div>
+    <div style="font-size:23px; color:var(--g600);">Validated effects and distributions — like an answer key.</div>
+  </div>
+  <div style="padding:14px 22px; background:#D6EBE3; border-left:4px solid #3A7565; border-radius:8px;">
+    <div style="font-weight:700; color:rgb(51,51,51); font-size:30px;">Statistical test</div>
+    <div style="font-size:23px; color:var(--g600);">Same analysis on agent data → a measurable gap — like a unit test.</div>
+  </div>
+</div>
+<div class="cobra-fragment">
+<div style="margin-top:28px; font-size:32px; color:var(--cobra); font-weight:700;">→ Closed-loop calibration for agent behavior. First instance: CoBRA.</div>
+</div>
+</div>

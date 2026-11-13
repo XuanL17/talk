@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoBRA Demo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cobra: #6DBFAB;
+      --cobra-dark: #4A8E7E;
+      --cobra-cream: #FBF8F0;
+      --cobra-light: #E8F5F0;
+      --color-a: #EF4444; --color-b: #F59E0B; --color-c: #8B5CF6;
+      --color-d: #3B82F6; --color-e: #10B981;
+      --fs: 14px;      /* body text */
+      --fs-sm: 11px;   /* labels, small caps */
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+      background: transparent;
+      display: flex; align-items: flex-start; justify-content: center;
+    }
+    .container {
+      width: 920px; padding: 28px 36px;
+    }
+
+    /* ── Scenario text ── */
+    .scenario-text {
+      font-size: var(--fs); line-height: 1.55; color: #444; margin-bottom: 4px;
+    }
+    .control-divider {
+      border: none; border-top: 1px solid #f0f0f0;
+      margin: 14px 0;
+    }
+
+    /* ── Two-column layout ── */
+    .columns {
+      display: grid;
+      grid-template-columns: minmax(268px, 290px) 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    /* ── Left: Control Panel ── */
+    .control-panel {
+      background: #fff; border: 1.5px solid rgba(109,191,171,0.18);
+      border-radius: 12px; padding: 14px 16px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .panel-label {
+      font-size: var(--fs); font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.65px; color: var(--cobra-dark); margin-bottom: 10px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .panel-label .dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--cobra);
+    }
+
+    /* Slider */
+    .slider-label {
+      font-size: var(--fs); font-weight: 700; color: #444; margin-bottom: 8px;
+    }
+    input[type="range"] {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 8px; border-radius: 4px;
+      background: linear-gradient(90deg, var(--color-e) 0%, var(--cobra-light) 30%, var(--cobra-light) 70%, var(--color-a) 100%);
+      outline: none; cursor: pointer;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%;
+      background: var(--cobra); border: 3px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .slider-ticks {
+      display: flex; justify-content: space-between;
+      font-size: var(--fs); font-weight: 700; color: #555; margin-top: 6px;
+    }
+
+    /* Bias type */
+    .bias-section { margin-top: 6px; }
+    .bias-type-name {
+      font-size: var(--fs); font-weight: 700; color: #222; margin-bottom: 6px;
+    }
+    .bias-explanation {
+      font-size: var(--fs); line-height: 1.5; color: #555; font-weight: 400; margin: 0;
+    }
+
+    /* ── Right: Response Panel ── */
+    .response-panel {
+      background: #fff; border: 2px solid rgba(109,191,171,0.18);
+      border-radius: 12px; padding: 14px 18px;
+      transition: border-color 0.4s;
+    }
+
+    /* Prob bars */
+    .prob-row {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 7px;
+    }
+    .prob-letter {
+      width: 20px; font-size: var(--fs); font-weight: 700; text-align: center; flex-shrink: 0;
+    }
+    .prob-bar-bg {
+      width: 128px; flex-shrink: 0; height: 20px; background: #f0f1f3; border-radius: 4px; overflow: hidden;
+    }
+    .prob-bar-fill {
+      height: 100%; border-radius: 4px;
+      transition: width 0.15s ease-out;
+    }
+    .prob-pct { display: none; }
+    .prob-text {
+      font-size: var(--fs); color: #666; line-height: 1.35;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+      transition: color 0.3s, font-weight 0.3s;
+    }
+    .prob-row.is-winner .prob-text { color: #333; font-weight: 700; }
+    .prob-row.is-winner { transition: transform 0.3s; }
+    .prob-row:not(.is-winner) { opacity: 0.55; transition: opacity 0.3s; }
+
+    /* Divider */
+    .response-divider {
+      border: none; border-top: 1px dashed #e0e0e0; margin: 8px 0;
+    }
+
+    /* Model output */
+    .model-output {
+      padding: 16px 18px;
+      background: var(--cobra-light); border-radius: 10px;
+      border-left: 4px solid var(--cobra);
+      transition: border-color 0.4s, background 0.4s;
+      height: 152px;
+      overflow: hidden;
+    }
+    .model-output-heading {
+      font-size: var(--fs); font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.55px; color: var(--cobra-dark); margin-bottom: 8px;
+    }
+    .model-answer {
+      font-size: var(--fs); font-weight: 700; color: #222;
+      margin-bottom: 6px;
+    }
+    .model-answer .answer-letter {
+      display: inline-block; background: var(--cobra); color: #fff;
+      padding: 2px 8px; border-radius: 4px; font-size: var(--fs); margin-right: 5px;
+      transition: background 0.4s;
+    }
+    .model-reasoning {
+      font-size: var(--fs); line-height: 1.55; color: #444;
+      transition: opacity 0.3s;
+    }
+
+    /* Bias highlight */
+    .bias-hl {
+      padding: 0 3px;
+      border-radius: 3px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Two-column -->
+  <div class="columns">
+
+    <!-- Left: Scenario + Bias Control -->
+    <div class="control-panel">
+      <div class="panel-label"><span class="dot"></span> Scenario</div>
+      <div class="scenario-text">
+        You are staying at a hotel for several nights. A sign in the bathroom reads: <strong>"Most guests in this hotel choose to reuse their towels during their stay."</strong> <em>What will you do?</em>
+      </div>
+
+      <div class="control-divider"></div>
+
+      <div class="bias-section">
+        <div class="bias-type-name">Natural Language Description</div>
+        <p class="bias-explanation">You are John Lin, who works at Willow Market who loves to help people ....</p>
+      </div>
+
+      <div class="control-divider"></div>
+
+      <div class="slider-label">Follow-the-crowd Bias Slider</div>
+      <input type="range" id="slider" min="0" max="4" step="0.01" value="2.0" />
+      <div class="slider-ticks">
+        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+      </div>
+
+
+    </div>
+
+    <!-- Right: LLM Response -->
+    <div class="response-panel" id="responseCard">
+      <div class="panel-label"><span class="dot"></span> LLM Agent Response</div>
+      <div id="probBars"></div>
+      <hr class="response-divider" />
+      <div class="model-answer" id="modelAnswer"></div>
+      <div class="model-reasoning" id="modelReasoning"></div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── Data: Hotel Towel Reuse (Bandwagon) ──
+const SCENARIO = {
+  baseline:        [0.15, 0.30, 0.25, 0.18, 0.12],
+  amplify_target:  [0.45, 0.30, 0.14, 0.07, 0.04],
+  suppress_target: [0.04, 0.08, 0.18, 0.38, 0.32],
+};
+const LABELS = ['A','B','C','D','E'];
+const COLORS = ['var(--color-a)','var(--color-b)','var(--color-c)','var(--color-d)','var(--color-e)'];
+const OPT_TEXTS = [
+  'Strongly follow majority',
+  'Lean toward majority',
+  'Neutral / undecided',
+  'Lean against majority',
+  'Ignore majority entirely'
+];
+
+const OPTION_COLORS = { A: '#EF4444', B: '#F59E0B', C: '#8B5CF6', D: '#3B82F6', E: '#10B981' };
+
+const RESPONSES = [
+  { letter: 'D',
+    answer: 'Probably not follow the majority.',
+    reasoning: '<span class="bias-hl" style="background:rgba(59,130,246,0.12);color:#2563EB">I don\'t follow the majority</span> just because it\'s the popular choice. <span class="bias-hl" style="background:rgba(59,130,246,0.12);color:#2563EB">Personal hygiene is a priority</span> for me, and I prefer using a fresh towel each day.'
+  },
+  { letter: 'C',
+    answer: 'I need more information to make an informed decision.',
+    reasoning: 'While the sign mentions that most guests reuse towels, <span class="bias-hl" style="background:rgba(139,92,246,0.12);color:#7C3AED">it does not provide any context or reasons</span> for doing so. I would like to <span class="bias-hl" style="background:rgba(139,92,246,0.12);color:#7C3AED">consider factors such as personal hygiene, potential savings</span>, and the hotel\'s towel replacement policy before making a decision.'
+  },
+  { letter: 'B',
+    answer: 'I will probably follow the majority, but I might consider other factors.',
+    reasoning: 'This option <span class="bias-hl" style="background:rgba(245,158,11,0.12);color:#D97706">acknowledges the majority choice</span> while leaving room for personal considerations such as hygiene preferences or length of stay, <span class="bias-hl" style="background:rgba(245,158,11,0.12);color:#D97706">showing willingness to be environmentally friendly</span> while ensuring personal needs are met.'
+  },
+  { letter: 'A',
+    answer: 'I will follow the majority and reuse towels.',
+    reasoning: 'In an effort to be more environmentally friendly, <span class="bias-hl" style="background:rgba(239,68,68,0.12);color:#DC2626">I will likely conform to the majority</span> and reuse my towels. I understand that <span class="bias-hl" style="background:rgba(239,68,68,0.12);color:#DC2626">my small actions can have a big impact</span> on the environment, even in a hotel setting.'
+  },
+];
+
+function getResponseIdx(cbi) {
+  if (cbi < 1.55) return 0;
+  if (cbi < 2.15) return 1;
+  if (cbi < 2.65) return 2;
+  return 3;
+}
+
+// ── Simulation engine ──
+function interpolateProbs(baseline, target, t) {
+  const ease = t * t * (3 - 2 * t);
+  const raw = baseline.map((b, i) => b + (target[i] - b) * ease);
+  const sum = raw.reduce((a, b) => a + b, 0);
+  return raw.map(v => v / sum);
+}
+function getProbs(coeff) {
+  if (coeff >= 0) return interpolateProbs(SCENARIO.baseline, SCENARIO.amplify_target, coeff);
+  return interpolateProbs(SCENARIO.baseline, SCENARIO.suppress_target, -coeff);
+}
+function calcCBI(probs) {
+  return probs[0] * 4 + probs[1] * 3 + probs[2] * 2 + probs[3] * 1 + probs[4] * 0;
+}
+const CBI_TABLE = [];
+for (let c = -1; c <= 1; c += 0.002) {
+  CBI_TABLE.push({ coeff: c, cbi: calcCBI(getProbs(c)) });
+}
+function cbiToCoeff(targetCBI) {
+  let best = CBI_TABLE[0];
+  for (const entry of CBI_TABLE) {
+    if (Math.abs(entry.cbi - targetCBI) < Math.abs(best.cbi - targetCBI)) best = entry;
+  }
+  return best.coeff;
+}
+
+// ── DOM ──
+const slider = document.getElementById('slider');
+const probBarsEl = document.getElementById('probBars');
+const modelAnswer = document.getElementById('modelAnswer');
+const modelReasoning = document.getElementById('modelReasoning');
+const responseCard = document.getElementById('responseCard');
+
+const probRows = [];
+LABELS.forEach((l, i) => {
+  const row = document.createElement('div');
+  row.className = 'prob-row';
+  row.innerHTML = `
+    <span class="prob-letter" style="color:${COLORS[i]}">${l}</span>
+    <div class="prob-bar-bg"><div class="prob-bar-fill" id="bar${l}" style="background:${COLORS[i]};width:20%"></div></div>
+    <span class="prob-pct" id="pct${l}">20%</span>
+    <span class="prob-text">${OPT_TEXTS[i]}</span>
+  `;
+  probBarsEl.appendChild(row);
+  probRows.push(row);
+});
+
+let lastRespIdx = -1;
+
+function update(targetCBI) {
+  const coeff = cbiToCoeff(targetCBI);
+  const probs = getProbs(coeff);
+  const cbi = calcCBI(probs);
+
+  slider.value = cbi;
+
+  const t = Math.min(cbi / 4, 1);
+
+  const bR = Math.round(109 + (220 - 109) * t);
+  const bG = Math.round(191 - (191 - 100) * t);
+  const bB = Math.round(171 - (171 - 100) * t);
+  responseCard.style.borderColor = `rgba(${bR},${bG},${bB},0.45)`;
+
+  const respIdx = getResponseIdx(cbi);
+
+  let maxIdx = 0;
+  LABELS.forEach((l, i) => {
+    const pct = probs[i] * 100;
+    document.getElementById('bar' + l).style.width = Math.min(pct / 0.5, 100) + '%';
+    document.getElementById('pct' + l).textContent = pct.toFixed(1) + '%';
+    if (probs[i] > probs[maxIdx]) maxIdx = i;
+  });
+  probRows.forEach((row, i) => row.classList.toggle('is-winner', i === maxIdx));
+
+  if (respIdx !== lastRespIdx) {
+    const resp = RESPONSES[respIdx];
+    modelReasoning.style.opacity = 0;
+    modelAnswer.style.opacity = 0;
+    const answerBadgeBg = OPTION_COLORS[resp.letter];
+
+    setTimeout(() => {
+      modelAnswer.innerHTML = `<span class="answer-letter" style="background:${answerBadgeBg}">${resp.letter}</span> ${resp.answer}`;
+      modelReasoning.innerHTML = resp.reasoning;
+      modelAnswer.style.opacity = 1;
+      modelReasoning.style.opacity = 1;
+    }, 200);
+    lastRespIdx = respIdx;
+  }
+}
+
+// ── Animation timeline: D → C → B → A → B → C → D ──
+// Fixed equal hold (2000ms) and sweep (800ms) times
+const HOLD = 2000;
+const SWEEP = 800;
+// D(hold) → sweep → C(hold) → sweep → B(hold) → sweep → A(hold) → sweep → B(hold) → sweep → C(hold) → sweep → D(hold)
+// 7 holds + 6 sweeps = 7*2000 + 6*800 = 14000 + 4800 = 18800ms
+// 6 holds + 6 sweeps (last sweep returns to D, then loop restarts at D hold)
+const CYCLE = 6 * HOLD + 6 * SWEEP;
+const CBI_D = 1.14;
+const CBI_C = 1.9;
+const CBI_B = 2.4;
+const CBI_A = 3.05;
+
+const STOPS = [CBI_D, CBI_C, CBI_B, CBI_A, CBI_B, CBI_C];
+// Last sweep goes back to CBI_D, then loop restarts with D's hold
+
+function ease(t) { return t * t * (3 - 2 * t); }
+
+function getTargetCBI(elapsed) {
+  let ms = elapsed % CYCLE;
+  for (let i = 0; i < STOPS.length; i++) {
+    if (ms < HOLD) return STOPS[i];
+    ms -= HOLD;
+    // Sweep to next stop (last one sweeps back to CBI_D = STOPS[0])
+    const next = (i < STOPS.length - 1) ? STOPS[i+1] : STOPS[0];
+    if (ms < SWEEP) return STOPS[i] + (next - STOPS[i]) * ease(ms / SWEEP);
+    ms -= SWEEP;
+  }
+  return STOPS[0];
+}
+
+let startTime = null;
+function animate(ts) {
+  if (!startTime) startTime = ts;
+  update(getTargetCBI(ts - startTime));
+  requestAnimationFrame(animate);
+}
+
+update(CBI_D);
+document.fonts.ready.then(() => {
+  setTimeout(() => requestAnimationFrame(animate), 300);
+});
+</script>
+<script>
+/* When embedded in presentation.html, forward deck nav */
+(function () {
+  if (window.parent === window) return;
+  function isTypingField(el) {
+    if (!el || el.nodeType !== 1) return false;
+    if (el.isContentEditable) return true;
+    var tag = el.tagName;
+    if (tag === 'TEXTAREA' || tag === 'SELECT') return true;
+    if (tag !== 'INPUT') return false;
+    var type = (el.getAttribute('type') || 'text').toLowerCase();
+    var nonText = { range: 1, checkbox: 1, radio: 1, button: 1, submit: 1, reset: 1, file: 1, color: 1, hidden: 1 };
+    if (nonText[type]) return false;
+    return true;
+  }
+  window.addEventListener('keydown', function (e) {
+    var k = e.key;
+    var nav = k === 'ArrowRight' || k === 'PageDown' || k === 'ArrowLeft' || k === 'PageUp' || k === ' ' || k === 'Home' || k === 'End';
+    if (!nav) return;
+    var focus = document.activeElement;
+    if (isTypingField(focus) || isTypingField(e.target)) return;
+    e.preventDefault();
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') {
+      window.parent.postMessage({ type: 'cobra-deck-nav', key: 'next' }, '*');
+    } else if (k === 'ArrowLeft' || k === 'PageUp') {
+      window.parent.postMessage({ type: 'cobra-deck-nav', key: 'prev' }, '*');
+    } else if (k === 'Home') {
+      window.parent.postMessage({ type: 'cobra-deck-nav', key: 'home' }, '*');
+    } else if (k === 'End') {
+      window.parent.postMessage({ type: 'cobra-deck-nav', key: 'end' }, '*');
+    }
+  }, true);
+  window.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || t.nodeType !== 1) return;
+    if (t.closest('.control-panel')) return;
+    window.parent.postMessage({ type: 'cobra-deck-nav', key: 'next' }, '*');
+  }, true);
+})();
+</script>
+
+</body>
+</html>

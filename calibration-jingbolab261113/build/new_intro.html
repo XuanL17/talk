@@ -1,0 +1,46 @@
+<!-- ============ EVIDENCE: SOCIAL SIM IS WEAK ============ -->
+<div class="slide" data-slide="t-evidence" data-rw="1280" data-rh="720" data-notes="The promise is huge: run a thousand-person study in five minutes. But when people actually check, the picture is not good. Bisbee and colleagues found synthetic survey answers look right on average, but the regressions lead to different conclusions than real respondents. Wang and colleagues showed LLMs flatten identity groups — responses are much less diverse than real people. And in our own HumanStudy-Bench, across 10 models and 4 agent designs, the best agent reaches the same scientific conclusion as the human study only about half the time.">
+<h4 style="font-size:38px;">But Can LLM Agents Really Stand In for Humans?</h4>
+<div style="margin-top:40px; display:flex; flex-direction:column; gap:18px; width:94%;">
+  <div style="padding:16px 22px; background:#FEF9E7; border-left:4px solid #FBBF24; border-radius:8px;">
+    <div style="font-weight:700; font-size:30px; color:rgb(51,51,51);">Averages look right, conclusions don't <sup style="color:#B8860B;">[1]</sup></div>
+    <div style="font-size:23px; color:rgb(102,102,102);">Synthetic survey data resembles humans on average, but regressions often yield different inferences.</div>
+  </div>
+  <div style="padding:16px 22px; background:#FEF9E7; border-left:4px solid #FBBF24; border-radius:8px;">
+    <div style="font-weight:700; font-size:30px; color:rgb(51,51,51);">Flattened people <sup style="color:#B8860B;">[2]</sup></div>
+    <div style="font-size:23px; color:rgb(102,102,102);">LLMs misportray identity groups and give far less diverse responses than real participants.</div>
+  </div>
+  <div style="padding:16px 22px; background:#FEF9E7; border-left:4px solid #FBBF24; border-radius:8px;">
+    <div style="font-weight:700; font-size:30px; color:rgb(51,51,51);">Coin-flip replication <sup style="color:#B8860B;">[3]</sup></div>
+    <div style="font-size:23px; color:rgb(102,102,102);">Across 10 LLMs × 4 agent designs, the best agent matches human conclusions ~50% of the time (PAS ≤ 0.50).</div>
+  </div>
+</div>
+<div class="citation">[1] Bisbee et al. (2024). Synthetic Replacements for Human Survey Data? The Perils of LLMs. <em>Political Analysis</em>. [2] Wang, Morgenstern &amp; Dickerson (2025). LLMs that replace human participants can harmfully misportray and flatten identity groups. <em>Nature Machine Intelligence</em>. [3] Liu et al. (2026). HumanStudy-Bench. <em>arXiv:2602.00685</em>.</div>
+</div>
+
+<!-- ============ MATH & CODE TOOK OFF ============ -->
+<div class="slide" data-slide="t-mathcode" data-rw="1280" data-rh="720" data-notes="Meanwhile, look at math and coding. In the last two years they took off. OpenAI's o1 report says performance consistently improves with more reinforcement learning compute. DeepSeek-R1 made the recipe public: no learned reward model, just rule-based rewards — check the final math answer against the reference, run the code against test cases. With that alone, R1-Zero's AIME accuracy went from about 16 percent to 71 percent during RL. Ai2's Tülu 3 gave the recipe a name: reinforcement learning with verifiable rewards. The common thread is a verifier.">
+<h4 style="font-size:38px;">Meanwhile, Math &amp; Code Took Off</h4>
+<div style="margin-top:40px; display:flex; gap:22px; align-items:stretch;">
+  <div style="flex:1; padding:22px 22px; background:#f8f8f8; border-radius:10px; border-top:4px solid var(--cobra);">
+    <div style="font-size:30px; font-weight:800; color:rgb(51,51,51);">OpenAI o1</div>
+    <div style="font-size:20px; color:var(--g500); margin-bottom:12px;">2024</div>
+    <div style="font-size:24px; color:rgb(51,51,51); line-height:1.45;">Performance "consistently improves" with more <strong>RL train-time compute</strong>.</div>
+  </div>
+  <div style="flex:1; padding:22px 22px; background:#f8f8f8; border-radius:10px; border-top:4px solid var(--cobra);">
+    <div style="font-size:30px; font-weight:800; color:rgb(51,51,51);">DeepSeek-R1</div>
+    <div style="font-size:20px; color:var(--g500); margin-bottom:12px;">2025</div>
+    <div style="font-size:24px; color:rgb(51,51,51); line-height:1.45;"><strong>Rule-based rewards</strong>: check the answer, run test cases.</div>
+    <div style="margin-top:12px; font-size:24px; color:#4A8E7E; font-weight:700;">AIME: 15.6% → 71.0% via RL</div>
+  </div>
+  <div style="flex:1; padding:22px 22px; background:#f8f8f8; border-radius:10px; border-top:4px solid var(--cobra);">
+    <div style="font-size:30px; font-weight:800; color:rgb(51,51,51);">Ai2 Tülu 3</div>
+    <div style="font-size:20px; color:var(--g500); margin-bottom:12px;">2024</div>
+    <div style="font-size:24px; color:rgb(51,51,51); line-height:1.45;"><strong>RL with Verifiable Rewards</strong> (RLVR): reward only when the answer checks out.</div>
+  </div>
+</div>
+<div class="cobra-fragment">
+<div style="margin-top:36px; text-align:center; font-size:34px; color:rgb(85,85,85);">Common thread: a <strong style="color:var(--cobra);">verifier</strong> that closes the loop.</div>
+</div>
+<div class="citation">OpenAI (2024). Learning to Reason with LLMs. · DeepSeek-AI (2025). DeepSeek-R1, arXiv:2501.12948. · Lambert et al. (2024). Tülu 3, arXiv:2411.15124.</div>
+</div>

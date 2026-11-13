@@ -1,0 +1,294 @@
+<!-- ============ OPENING ============ -->
+{{OPENING}}
+
+<!-- ============ WHAT IS BEHAVIOR ============ -->
+<div class="slide" data-slide="t-behaviors" data-rw="1280" data-rh="720" data-notes="First, what do I mean by behavior? Behavior is what a person, or a group of people, actually does in a situation. Think of a single decision: people weigh losses more than gains, they get anchored by the first number they see, they react differently to the same option depending on how it is framed. [click] Then there is social behavior: we follow the crowd, we obey authority, we reciprocate, we care about fairness, we favor our own group. [click] And there is collective behavior, which only shows up when many people interact: herding in markets, polarization, panic buying, rumors spreading. And this list goes on and on.">
+<h4 style="font-size:38px;">What Do We Mean by <span style="color:var(--cobra);">Behavior</span>?</h4>
+<style>
+  .bh-row{display:flex; align-items:flex-start; gap:22px; margin-bottom:22px;}
+  .bh-label{flex:0 0 190px; font-size:22px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--g500); padding-top:10px;}
+  .bh-chips{flex:1; display:flex; flex-wrap:wrap; gap:12px;}
+  .bh-chip{font-size:24px; padding:8px 18px; border-radius:999px; background:#f3f4f6; color:rgb(51,51,51); border:1.5px solid #e5e7eb;}
+  .bh-chip.hl{background:var(--cobra-light, #E8F5F0); border-color:var(--cobra); color:var(--cobra-darker); font-weight:700;}
+  .bh-chip.more{background:none; border:none; color:var(--g400); font-weight:700;}
+</style>
+<div style="margin-top:34px; width:96%;">
+  <div class="bh-row">
+    <div class="bh-label">Individual<br>decisions</div>
+    <div class="bh-chips">
+      <span class="bh-chip">Loss aversion</span><span class="bh-chip">Anchoring</span><span class="bh-chip">Framing effect</span>
+      <span class="bh-chip">Risk taking</span><span class="bh-chip">Procrastination</span><span class="bh-chip">Overconfidence</span><span class="bh-chip more">…</span>
+    </div>
+  </div>
+  <div class="cobra-fragment">
+  <div class="bh-row">
+    <div class="bh-label">Social</div>
+    <div class="bh-chips">
+      <span class="bh-chip hl">Conformity (follow the crowd)</span><span class="bh-chip">Obedience to authority</span><span class="bh-chip">Reciprocity</span>
+      <span class="bh-chip">Fairness</span><span class="bh-chip">Trust</span><span class="bh-chip">In-group favoritism</span><span class="bh-chip more">…</span>
+    </div>
+  </div>
+  </div>
+  <div class="cobra-fragment">
+  <div class="bh-row">
+    <div class="bh-label">Collective</div>
+    <div class="bh-chips">
+      <span class="bh-chip">Herding in markets</span><span class="bh-chip">Polarization</span><span class="bh-chip">Panic buying</span>
+      <span class="bh-chip">Rumor spreading</span><span class="bh-chip">Voting</span><span class="bh-chip">Evacuation</span><span class="bh-chip more">…</span>
+    </div>
+  </div>
+  <div style="margin-top:26px; text-align:center; font-size:30px; color:rgb(85,85,85);">Behavior = what a person or a group <strong style="color:var(--cobra);">actually does</strong> in a situation.</div>
+  </div>
+</div>
+</div>
+
+<!-- ============ WHY CALIBRATE: PURPOSES ============ -->
+<div class="slide" data-slide="t-purpose" data-rw="1280" data-rh="720" data-notes="So why calibrate agent behavior? What is it for? A few examples. Can an agent stand in for a specific person — say, Jingbo? [click] Can a population of agents show how a crowd behaves? Think of the Great Hall before the Battle of Hogwarts: Pansy shouts, someone grab Harry — and instead, one student after another steps forward and stands behind Harry. Nobody planned it; the crowd decided together. [click] Can a character, in a game or a story, stay in character? [click] Even an object: a car like Lightning McQueen, a talking fridge, a smart device — each with its own way of behaving. [click] And many more. [click] And here is the key point. A simulation is not judged by how the target truly behaves — Mickey and Lightning McQueen do not exist, and even for Jingbo, an agent can only match what we know and believe about Jingbo's behavior. It is judged by how the people around it believe it behaves. That is what believability means, from Bates' believable agents in the 1990s to Generative Agents today.">
+<h4 style="font-size:38px;">Why Calibrate <span style="color:var(--cobra);">Agent Behavior</span>?</h4>
+<style>
+  .pp-card{flex:1; background:#f8f8f8; border-radius:12px; overflow:hidden; display:flex; flex-direction:column;}
+  .pp-card img{width:100%; height:290px; object-fit:cover; display:block;}
+  .pp-q{padding:14px 14px 16px; font-size:24px; font-weight:800; color:rgb(51,51,51); line-height:1.2;}
+  .pp-d{padding:0 14px 14px; font-size:19px; color:rgb(102,102,102); line-height:1.35;}
+</style>
+<div style="margin-top:28px; display:flex; gap:16px; align-items:stretch; width:100%;">
+  <div class="pp-card">
+    <img src="figures/purpose/jingbo-shang.jpg" alt="Jingbo Shang" style="object-position:50% 35%;">
+    <div class="pp-q">Simulate a person?</div>
+  </div>
+  <div class="cobra-fragment" style="flex:1; display:flex;">
+  <div class="pp-card">
+    <img src="figures/purpose/hogwarts-crowd.jpg" alt="Harry and the students in the Great Hall, Harry Potter and the Deathly Hallows Part 2" style="object-position:44% 30%;">
+    <div class="pp-q">Simulate a crowd?</div>
+  </div>
+  </div>
+  <div class="cobra-fragment" style="flex:1; display:flex;">
+  <div class="pp-card">
+    <img src="figures/purpose/mickey.jpg" alt="Mickey Mouse in Steamboat Willie (1928)" style="object-position:60% 40%;">
+    <div class="pp-q">Simulate a character?</div>
+  </div>
+  </div>
+  <div class="cobra-fragment" style="flex:1; display:flex;">
+  <div class="pp-card">
+    <img src="figures/purpose/lightning-mcqueen.jpg" alt="Lightning McQueen from Cars" style="object-position:58% 50%;">
+    <div class="pp-q">Simulate an object?</div>
+  </div>
+  </div>
+  <div class="cobra-fragment" style="flex:0 0 40px; display:flex; align-items:center; justify-content:center; font-size:44px; font-weight:800; color:var(--g400);">…</div>
+</div>
+<div class="cobra-fragment">
+<div style="margin-top:22px; text-align:center; font-size:30px; color:rgb(85,85,85);">The goal is not how the target <em>truly</em> behaves, but how people <strong style="color:var(--cobra);">believe</strong> it behaves.</div>
+</div>
+</div>
+
+<!-- ============ QUESTION ============ -->
+<div class="slide" data-slide="t-question" data-rw="1280" data-rh="720" data-notes="So we want agents that behave in ways people find believable. [click] Which raises the obvious question: how well do today's models actually simulate behavior?">
+<div style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:34px; margin-top:-40px;">
+  <div style="font-size:40px; color:rgb(102,102,102); line-height:1.35;">We want agents that behave in ways people find <span style="color:var(--cobra); font-weight:700;">believable</span>.</div>
+  <div class="cobra-fragment"><div style="font-size:50px; font-weight:800; color:var(--g800); line-height:1.3;">So how well do today's models<br>actually <span style="color:#B8860B;">simulate behavior</span>?</div></div>
+</div>
+</div>
+
+<!-- ============ GOLD MEDAL vs COIN FLIP ============ -->
+<div class="slide" data-slide="t-models" data-rw="1280" data-rh="720" data-notes="Here is the short answer. Today's models are trained to be one helpful assistant, and to excel at math and code. Fine-tuning gives us the assistant; reinforcement learning and test-time reasoning push math and code. And it works: in 2025, LLMs reached gold-medal level at the International Math Olympiad, and at the ICPC World Finals, the top university programming contest, where OpenAI's system solved all 12 problems. [click] But ask the same models to behave like someone, for example to act as the participants in classic human studies, and they reproduce the human finding only about half the time. Basically a coin flip. Nothing in training asks for this. [click] So why are they so good at one, and so poor at the other?">
+<h4 style="font-size:38px;">Gold Medal at Math, <span style="color:#B8860B;">Coin Flip</span> at Behavior</h4>
+<div style="position:relative; width:100%; margin-top:14px; aspect-ratio:1150/470;">
+  <div style="position:absolute; inset:0;">{{SVG:figures/cartoon/mountain-base.svg}}</div>
+  <div class="cobra-fragment" style="position:absolute; inset:0;">{{SVG:figures/cartoon/mountain-crash.svg}}</div>
+</div>
+<div class="cobra-fragment">
+  <div style="margin-top:18px; text-align:center; font-size:34px; font-weight:800; color:var(--g800);">Why so good at one, and so poor at the other?</div>
+</div>
+<div class="citation">[1] Google DeepMind (2025). Gemini Deep Think achieves gold-medal standard at the International Mathematical Olympiad; Gemini 2.5 Deep Think achieves gold-medal level at the ICPC World Finals. [2] Liu et al. (2026). HumanStudy-Bench: Towards AI Agent Design for Participant Simulation. arXiv:2602.00685.</div>
+</div>
+
+<!-- ============ LOOPS: CLOSED vs OPEN ============ -->
+<div class="slide" data-slide="t-loops" data-rw="1280" data-rh="720" data-notes="So why does simulating behavior fail, when math and code succeed? The difference is a closed loop. In math and code, the model produces an answer, a verifier checks it, and the feedback goes back — a closed loop. [click] For human behavior, an agent produces some behavior, and then — nothing checks it. We look at it and say it seems plausible. The loop is open.">
+<h4 style="font-size:38px;">Why Does Simulating Behavior <span style="color:#B8860B;">Fail</span>?</h4>
+<div style="margin-top:50px; display:flex; gap:28px; align-items:stretch; padding:0 60px;">
+    <div style="flex:1; padding:16px 16px 10px; background:#f8f8f8; border-radius:10px; border-top:4px solid var(--g400);">
+      <div style="font-size:21px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--g500); margin-bottom:8px;">Math · Code</div>
+      <svg viewBox="0 0 360 230" width="100%" style="display:block;">
+        <defs><marker id="tA" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker></defs>
+        <rect x="5" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#6b7280" stroke-width="2.5"/><text x="55" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Model</text>
+        <rect x="130" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#6b7280" stroke-width="2.5"/><text x="180" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Answer</text>
+        <rect x="255" y="20" width="100" height="56" rx="10" fill="#6b7280"/><text x="305" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#fff">Verifier</text>
+        <line x1="105" y1="48" x2="124" y2="48" stroke="#6b7280" stroke-width="2.5" marker-end="url(#tA)"/>
+        <line x1="230" y1="48" x2="249" y2="48" stroke="#6b7280" stroke-width="2.5" marker-end="url(#tA)"/>
+        <path d="M305 76 V135 H55 V84" fill="none" stroke="#6b7280" stroke-width="2.5" marker-end="url(#tA)"/>
+        <text x="180" y="125" text-anchor="middle" font-size="19" font-family="Comic Neue, cursive" fill="#4b5563" font-weight="700">feedback ✓</text>
+        <text x="180" y="185" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">answer keys · unit tests</text>
+        <text x="180" y="212" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">→ RL with verifiable rewards</text>
+      </svg>
+    </div>
+    <div class="cobra-fragment" style="flex:1; display:flex;">
+    <div style="flex:1; width:100%; padding:16px 16px 10px; background:#FEF9E7; border-radius:10px; border-top:4px solid #FBBF24;">
+      <div style="font-size:21px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#B8860B; margin-bottom:8px;">Human behavior today</div>
+      <svg viewBox="0 0 360 230" width="100%" style="display:block;">
+        <defs><marker id="tB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B8860B"/></marker></defs>
+        <rect x="5" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#B8860B" stroke-width="2.5"/><text x="55" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Agent</text>
+        <rect x="130" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#B8860B" stroke-width="2.5"/><text x="180" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Behavior</text>
+        <rect x="255" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#B8860B" stroke-width="2.5" stroke-dasharray="7 6"/><text x="305" y="58" text-anchor="middle" font-size="30" font-family="Comic Neue, cursive" font-weight="700" fill="#B8860B">???</text>
+        <line x1="105" y1="48" x2="124" y2="48" stroke="#B8860B" stroke-width="2.5" marker-end="url(#tB)"/>
+        <line x1="230" y1="48" x2="249" y2="48" stroke="#B8860B" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#tB)"/>
+        <path d="M305 76 V135 H55 V84" fill="none" stroke="#d6c08a" stroke-width="2.5" stroke-dasharray="6 7"/>
+        <text x="180" y="125" text-anchor="middle" font-size="19" font-family="Comic Neue, cursive" fill="#B8860B" font-weight="700">open loop ✗</text>
+        <text x="180" y="185" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">scarce human data</text>
+        <text x="180" y="212" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">no single right answer</text>
+      </svg>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- ============ WHY NO VERIFIER FOR BEHAVIOR ============ -->
+<div class="slide" data-slide="t-whyhard" data-rw="1280" data-rh="720" data-notes="So why is closing this loop so hard for behavior? Three reasons. First, there is no single right answer. A person is not a math problem: behavior is a distribution, and it changes across people, contexts, and cultures. Second, ground truth is scarce. Human studies are slow, expensive, and small, and complete data about any one person is almost impossible to get, for privacy and practical reasons. And for a character or an object, the ground truth lives in the stories and in what fans expect, scattered and never written down as data. Third, and because of the first two, we end up judging believability by eye: we look at the agent and say it seems right. [click] So without a verifier, the loop is never closed.">
+<h4 style="font-size:38px;">Why Is Closing the Loop <span style="color:#B8860B;">Hard</span>?</h4>
+<div style="margin-top:44px; display:flex; gap:24px; align-items:stretch;">
+  <div style="flex:1; padding:24px 24px; background:#f8f8f8; border-radius:10px; border-top:4px solid #FBBF24;">
+    <div style="font-size:60px; font-weight:700; color:#B8860B; line-height:1;">1</div>
+    <div style="font-weight:700; font-size:31px; color:rgb(51,51,51); margin:10px 0 10px; line-height:1.2;">No single right answer</div>
+    <div style="font-size:23px; color:rgb(102,102,102); line-height:1.45;">Behavior is a distribution that shifts across people, contexts, and cultures.</div>
+  </div>
+  <div style="flex:1; padding:24px 24px; background:#f8f8f8; border-radius:10px; border-top:4px solid #FBBF24;">
+    <div style="font-size:60px; font-weight:700; color:#B8860B; line-height:1;">2</div>
+    <div style="font-weight:700; font-size:31px; color:rgb(51,51,51); margin:10px 0 10px; line-height:1.2;">Scarce ground truth</div>
+    <div style="font-size:23px; color:rgb(102,102,102); line-height:1.45;">Studies are small, full personal data is near-impossible to get, and characters live in stories.</div>
+  </div>
+  <div style="flex:1; padding:24px 24px; background:#f8f8f8; border-radius:10px; border-top:4px solid #FBBF24;">
+    <div style="font-size:60px; font-weight:700; color:#B8860B; line-height:1;">3</div>
+    <div style="font-weight:700; font-size:31px; color:rgb(51,51,51); margin:10px 0 10px; line-height:1.2;">Judged by eye</div>
+    <div style="font-size:23px; color:rgb(102,102,102); line-height:1.45;">Believability is checked by looking at it: “seems right”.</div>
+  </div>
+</div>
+<div class="cobra-fragment">
+<div style="margin-top:40px; text-align:center; font-size:34px; color:rgb(85,85,85);">→ No verifier → the loop is <strong style="color:#B8860B;">never closed</strong>.</div>
+</div>
+</div>
+
+<!-- ============ WHY CALIBRATE: ONE CONSTRUCT, MANY PARADIGMS ============ -->
+<div class="slide" data-slide="t-paradigms" data-rw="1280" data-rh="720" style="padding-top:56px;" data-notes="Let me come back to the first difficulty, no single right answer, and make it concrete. It is also why we call this calibration, and not just 'make the agent human-like'. Because in social science, one construct is measured by many paradigms — and there's no consensus on a single true value. Take conformity, or following the crowd. Sherif measured it with an ambiguous moving light in a dark room. Asch used unambiguous line judgments with confederates. Deutsch and Gerard separated normative from informational influence. Crutchfield put people in private booths. Milgram and colleagues counted passers-by looking up at a crowd on the street; Cialdini and colleagues watched whether people litter in a littered versus clean place. Goldstein, Cialdini and colleagues used hotel towel signs. Salganik and colleagues built an online music market. And the list goes on. [click] These don't give one number. Conformity levels differ by paradigm, by culture, even by decade — Bond and Smith's meta-analysis of Asch-type studies found it declined in the US over time and is higher in collectivist cultures. [click] So we can't claim an agent has 'the human level of conformity'. What we can say precisely is: according to this validated paradigm, the agent's conformity is at this level — and we calibrate it to a target on that paradigm. This is also why the two highlighted paradigms, Asch and hotel towel, will come back in our example work.">
+<h4 style="font-size:36px;">Why "Calibrate"? One Construct, <span style="color:var(--cobra);">Many Paradigms</span></h4>
+<div style="margin-top:18px; display:flex; gap:6px; align-items:center;">
+  <div style="flex-shrink:0; width:190px; text-align:center;">
+    <div style="font-size:34px; font-weight:800; color:#3A7565; line-height:1.1;">Conformity</div>
+    <div style="font-size:17px; color:var(--g600); margin-top:6px;">follow-the-crowd<br>/ bandwagon</div>
+  </div>
+  <svg viewBox="0 0 40 400" width="40" height="350" style="flex-shrink:0;" aria-hidden="true"><path d="M36 4 C14 4 20 40 20 120 C20 180 16 196 4 200 C16 204 20 220 20 280 C20 360 14 396 36 396" fill="none" stroke="#5BA898" stroke-width="4" stroke-linecap="round"/></svg>
+  <table style="flex:1; border-collapse:collapse; font-size:21px;">
+<tbody>
+<tr style="border-bottom:1px solid #f0f0f0; "><td style="padding:5px 12px; font-weight:700; color:rgb(51,51,51);">Autokinetic effect</td><td style="padding:5px 12px; color:var(--g500);">Sherif 1935</td><td style="padding:5px 12px; color:var(--g600);">lab · ambiguous moving light</td></tr>
+<tr style="border-bottom:1px solid #f0f0f0; background:#E8F5F0;"><td style="padding:5px 12px; font-weight:700; color:rgb(51,51,51);">Line judgment</td><td style="padding:5px 12px; color:var(--g500);">Asch 1951</td><td style="padding:5px 12px; color:var(--g600);">lab · confederate majority</td></tr>
+<tr style="border-bottom:1px solid #f0f0f0; "><td style="padding:5px 12px; font-weight:700; color:rgb(51,51,51);">Normative vs. informational</td><td style="padding:5px 12px; color:var(--g500);">Deutsch &amp; Gerard 1955</td><td style="padding:5px 12px; color:var(--g600);">lab · anonymity manipulated</td></tr>
+<tr style="border-bottom:1px solid #f0f0f0; "><td style="padding:5px 12px; font-weight:700; color:rgb(51,51,51);">Private booths</td><td style="padding:5px 12px; color:var(--g500);">Crutchfield 1955</td><td style="padding:5px 12px; color:var(--g600);">lab · simulated panel of peers</td></tr>
+<tr style="border-bottom:1px solid #f0f0f0; "><td style="padding:5px 12px; font-weight:700; color:rgb(51,51,51);">Sidewalk crowd</td><td style="padding:5px 12px; color:var(--g500);">Milgram et al. 1969</td><td style="padding:5px 12px; color:var(--g600);">field · passers-by look up</td></tr>
+<tr style="border-bottom:1px solid #f0f0f0; "><td style="padding:5px 12px; font-weight:700; color:rgb(51,51,51);">Littering norms</td><td style="padding:5px 12px; color:var(--g500);">Cialdini et al. 1990</td><td style="padding:5px 12px; color:var(--g600);">field · littered vs. clean setting</td></tr>
+<tr style="border-bottom:1px solid #f0f0f0; "><td style="padding:5px 12px; font-weight:700; color:rgb(51,51,51);">MusicLab market</td><td style="padding:5px 12px; color:var(--g500);">Salganik et al. 2006</td><td style="padding:5px 12px; color:var(--g600);">online · download counts shown</td></tr>
+<tr style="border-bottom:1px solid #f0f0f0; background:#E8F5F0;"><td style="padding:5px 12px; font-weight:700; color:rgb(51,51,51);">Hotel towel reuse</td><td style="padding:5px 12px; color:var(--g500);">Goldstein et al. 2008</td><td style="padding:5px 12px; color:var(--g600);">field · descriptive-norm sign</td></tr>
+<tr><td style="padding:2px 12px; font-size:26px; color:var(--g400); font-weight:700; letter-spacing:.2em;">⋮</td><td style="padding:2px 12px; font-size:26px; color:var(--g400);">…</td><td style="padding:2px 12px; font-size:26px; color:var(--g400);">…</td></tr>
+</tbody></table>
+</div>
+<div class="cobra-fragment">
+<div style="margin-top:12px; padding:8px 18px; background:#FEF9E7; border-left:4px solid #FBBF24; border-radius:8px; font-size:23px; color:rgb(85,85,85);">No consensus on one "true" level — effects vary by <strong>paradigm</strong>, <strong>culture</strong>, even <strong>decade</strong> (Bond &amp; Smith, 1996).</div>
+</div>
+<div class="cobra-fragment">
+<div style="margin-top:8px; font-size:24px; color:var(--cobra-darker); font-weight:700;">→ We calibrate <em>with respect to a validated paradigm</em>: "follow-the-crowd = 3.6 / 4 <u>on hotel towel</u>", not "human-like conformity".</div>
+</div>
+<div class="citation" style="font-size:10px;">Sherif (1935) · Asch (1951) · Deutsch &amp; Gerard (1955) J. Abnorm. Soc. Psychol. · Crutchfield (1955) Am. Psychol. · Cialdini, Reno &amp; Kallgren (1990) JPSP · Milgram, Bickman &amp; Berkowitz (1969) JPSP · Salganik, Dodds &amp; Watts (2006) Science · Goldstein, Cialdini &amp; Griskevicius (2008) J. Consumer Res. · Bond &amp; Smith (1996) Psychol. Bull.</div>
+</div>
+
+<!-- ============ LOOPS: CLOSING IT ============ -->
+<div class="slide" data-slide="t-loops3" data-rw="1280" data-rh="720" data-notes="So back to our picture. Math and code have a closed loop; human behavior is open. [click] What if classic social science experiments play the role of the verifier? The agent behaves, the experiment measures it against validated human results, and we adjust until it's on target. That's the loop we want to close.">
+<h4 style="font-size:38px;">Closing the Loop for Human Behavior</h4>
+<div style="margin-top:46px; display:flex; gap:22px; align-items:stretch;">
+    <div style="flex:1; padding:16px 16px 10px; background:#f8f8f8; border-radius:10px; border-top:4px solid var(--g400);">
+      <div style="font-size:21px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--g500); margin-bottom:8px;">Math · Code</div>
+      <svg viewBox="0 0 360 230" width="100%" style="display:block;">
+        <defs><marker id="tA" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/></marker></defs>
+        <rect x="5" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#6b7280" stroke-width="2.5"/><text x="55" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Model</text>
+        <rect x="130" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#6b7280" stroke-width="2.5"/><text x="180" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Answer</text>
+        <rect x="255" y="20" width="100" height="56" rx="10" fill="#6b7280"/><text x="305" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#fff">Verifier</text>
+        <line x1="105" y1="48" x2="124" y2="48" stroke="#6b7280" stroke-width="2.5" marker-end="url(#tA)"/>
+        <line x1="230" y1="48" x2="249" y2="48" stroke="#6b7280" stroke-width="2.5" marker-end="url(#tA)"/>
+        <path d="M305 76 V135 H55 V84" fill="none" stroke="#6b7280" stroke-width="2.5" marker-end="url(#tA)"/>
+        <text x="180" y="125" text-anchor="middle" font-size="19" font-family="Comic Neue, cursive" fill="#4b5563" font-weight="700">feedback ✓</text>
+        <text x="180" y="185" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">answer keys · unit tests</text>
+        <text x="180" y="212" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">→ RL with verifiable rewards</text>
+      </svg>
+    </div>
+    <div style="flex:1; padding:16px 16px 10px; background:#FEF9E7; border-radius:10px; border-top:4px solid #FBBF24;">
+      <div style="font-size:21px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:#B8860B; margin-bottom:8px;">Human behavior today</div>
+      <svg viewBox="0 0 360 230" width="100%" style="display:block;">
+        <defs><marker id="tB" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#B8860B"/></marker></defs>
+        <rect x="5" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#B8860B" stroke-width="2.5"/><text x="55" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Agent</text>
+        <rect x="130" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#B8860B" stroke-width="2.5"/><text x="180" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Behavior</text>
+        <rect x="255" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#B8860B" stroke-width="2.5" stroke-dasharray="7 6"/><text x="305" y="58" text-anchor="middle" font-size="30" font-family="Comic Neue, cursive" font-weight="700" fill="#B8860B">???</text>
+        <line x1="105" y1="48" x2="124" y2="48" stroke="#B8860B" stroke-width="2.5" marker-end="url(#tB)"/>
+        <line x1="230" y1="48" x2="249" y2="48" stroke="#B8860B" stroke-width="2.5" stroke-dasharray="6 5" marker-end="url(#tB)"/>
+        <path d="M305 76 V135 H55 V84" fill="none" stroke="#d6c08a" stroke-width="2.5" stroke-dasharray="6 7"/>
+        <text x="180" y="125" text-anchor="middle" font-size="19" font-family="Comic Neue, cursive" fill="#B8860B" font-weight="700">open loop ✗</text>
+        <text x="180" y="185" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">scarce human data</text>
+        <text x="180" y="212" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">no single right answer</text>
+      </svg>
+    </div>
+    <div class="cobra-fragment" style="flex:1; display:flex;">
+    <div style="flex:1; width:100%; padding:16px 16px 10px; background:#E8F5F0; border-radius:10px; border-top:4px solid var(--cobra);">
+      <div style="font-size:21px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--cobra-darker); margin-bottom:8px;">Our approach</div>
+      <svg viewBox="0 0 360 230" width="100%" style="display:block;">
+        <defs><marker id="tC" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4A8E7E"/></marker></defs>
+        <rect x="5" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#4A8E7E" stroke-width="2.5"/><text x="55" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Agent</text>
+        <rect x="130" y="20" width="100" height="56" rx="10" fill="#fff" stroke="#4A8E7E" stroke-width="2.5"/><text x="180" y="55" text-anchor="middle" font-size="21" font-family="Comic Neue, cursive" font-weight="700" fill="#333">Behavior</text>
+        <rect x="255" y="12" width="100" height="72" rx="10" fill="#4A8E7E"/><text x="305" y="44" text-anchor="middle" font-size="19" font-family="Comic Neue, cursive" font-weight="700" fill="#fff">Classic</text><text x="305" y="68" text-anchor="middle" font-size="19" font-family="Comic Neue, cursive" font-weight="700" fill="#fff">experiment</text>
+        <line x1="105" y1="48" x2="124" y2="48" stroke="#4A8E7E" stroke-width="2.5" marker-end="url(#tC)"/>
+        <line x1="230" y1="48" x2="249" y2="48" stroke="#4A8E7E" stroke-width="2.5" marker-end="url(#tC)"/>
+        <path d="M305 84 V135 H55 V84" fill="none" stroke="#4A8E7E" stroke-width="2.5" marker-end="url(#tC)"/>
+        <text x="180" y="125" text-anchor="middle" font-size="19" font-family="Comic Neue, cursive" fill="#4A8E7E" font-weight="700">measure → adjust ✓</text>
+        <text x="180" y="185" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">validated protocols + human results</text>
+        <text x="180" y="212" text-anchor="middle" font-size="18" font-family="Comic Neue, cursive" fill="#666">→ calibrated agent behavior</text>
+      </svg>
+    </div>
+    </div>
+</div>
+</div>
+
+<!-- ============ THESIS ============ -->
+<div class="slide" data-slide="t-thesis" data-rw="1280" data-rh="720" data-notes="So here's what we believe. Social science has spent a century building exactly the verifier we need: classic, validated experiments. Each one gives a protocol, real human results, and a statistical test. If we operationalize them as environments, they become calibration tasks — the human-behavior counterpart of unit tests. Let me show you one example of closing this loop: our CHI 2026 paper, CoBRA.">
+<h4 style="font-size:38px;">Our View: Experiments Are the <span style="color:var(--cobra);">Verifiers</span> for Human Behavior</h4>
+<div style="margin-top:40px; display:flex; flex-direction:column; gap:16px; width:88%;">
+  <div style="padding:14px 22px; background:#E8F5F0; border-left:4px solid var(--cobra-mint); border-radius:8px;">
+    <div style="font-weight:700; color:rgb(51,51,51); font-size:30px;">Protocol</div>
+    <div style="font-size:23px; color:var(--g600);">Exact instructions, stimuli, conditions — like a well-posed problem.</div>
+  </div>
+  <div style="padding:14px 22px; background:#E0F0EA; border-left:4px solid #4A8E7E; border-radius:8px;">
+    <div style="font-weight:700; color:rgb(51,51,51); font-size:30px;">Human ground truth</div>
+    <div style="font-size:23px; color:var(--g600);">Validated effects for <strong>that paradigm</strong> — like an answer key (one of many, not "the" truth).</div>
+  </div>
+  <div style="padding:14px 22px; background:#D6EBE3; border-left:4px solid #3A7565; border-radius:8px;">
+    <div style="font-weight:700; color:rgb(51,51,51); font-size:30px;">Statistical test</div>
+    <div style="font-size:23px; color:var(--g600);">Same analysis on agent data → a measurable gap — like a unit test.</div>
+  </div>
+</div>
+<div class="cobra-fragment">
+<div style="margin-top:28px; font-size:32px; color:var(--cobra); font-weight:700;">→ Example work: <img src="co_website/public/snake.svg" style="width:34px;height:34px;vertical-align:-8px;"> CoBRA</div>
+</div>
+</div>
+
+<!-- ============ EXAMPLE WORK: ORIGINAL CoBRA DECK ============ -->
+{{REUSE:1}}
+{{REUSE:2}}
+{{REUSE:3}}
+{{REUSE:4}}
+{{REUSE:5}}
+{{REUSE:6}}
+{{REUSE:7}}
+{{REUSE:8}}
+{{REUSE:9}}
+{{REUSE:10}}
+{{REUSE:11}}
+{{REUSE:12}}
+{{REUSE:13}}
+{{REUSE:14}}
+{{REUSE:15}}
+{{REUSE:16}}
+{{REUSE:17}}
+{{REUSE:26}}

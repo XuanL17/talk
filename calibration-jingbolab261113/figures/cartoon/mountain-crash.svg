@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -50 1150 470" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <!-- tumble trail -->
+  <path d="M600 160 q40 30 30 70 q-10 40 60 60 q60 20 120 70 q20 20 70 30" fill="none" stroke="#B8860B" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 9" opacity="0.7"/>
+  <!-- parts that fell off -->
+  <g fill="#6b7280"><rect x="700" y="300" width="10" height="10" transform="rotate(25 705 305)"/><circle cx="760" cy="345" r="5"/><rect x="812" y="370" width="12" height="6" transform="rotate(-20 818 373)"/></g>
+  <!-- antenna snapped off -->
+  <g transform="translate(1010,392) rotate(70)"><line x1="0" y1="0" x2="0" y2="-18" stroke="#6b7280" stroke-width="4"/><circle cx="0" cy="-22" r="7" fill="#F4B740"/></g>
+  <!-- crashed robot: head-first into the ground, legs up in a V -->
+  <g transform="translate(930,398) rotate(165)">
+    <path d="M-12 112 L-40 178" stroke="#6b7280" stroke-width="10" stroke-linecap="round"/>
+    <path d="M12 112 L44 172" stroke="#6b7280" stroke-width="10" stroke-linecap="round"/>
+    <rect x="-28" y="50" width="56" height="64" rx="12" fill="#F4B740" stroke="#B8860B" stroke-width="3"/>
+    <path d="M-28 64 L-70 52" stroke="#6b7280" stroke-width="8" stroke-linecap="round"/>
+    <path d="M28 64 L70 92" stroke="#6b7280" stroke-width="8" stroke-linecap="round"/>
+    <rect x="-36" y="-8" width="72" height="58" rx="14" fill="#fff" stroke="#6b7280" stroke-width="4"/>
+    <!-- X eyes (upside down) -->
+    <g stroke="#333" stroke-width="4" stroke-linecap="round"><path d="M-22 12 l12 12 M-10 12 l-12 12"/><path d="M10 12 l12 12 M22 12 l-12 12"/></g>
+  </g>
+  <!-- dirt mound burying the head -->
+  <path d="M858 402 q20 -26 50 -22 q24 -16 50 -2 q26 -6 40 24 Z" fill="#c8b8a0"/>
+  <!-- dizzy stars -->
+  <g fill="#FFCD00" stroke="#B8860B" stroke-width="1.5">
+    <path d="M846 300 l4 9 10 1 -8 6 3 10 -9 -5 -9 5 3 -10 -8 -6 10 -1z"/>
+    <path d="M1012 296 l3 7 8 1 -6 5 2 8 -7 -4 -7 4 2 -8 -6 -5 8 -1z"/>
+    <path d="M930 268 l3 7 8 1 -6 5 2 8 -7 -4 -7 4 2 -8 -6 -5 8 -1z"/>
+  </g>
+  <!-- broken BEHAVIOR flag stuck in the ground next to the crashed robot -->
+  <g transform="translate(985,402) rotate(4)">
+    <line x1="0" y1="0" x2="0" y2="-150" stroke="#6b7280" stroke-width="5"/>
+    <path d="M2 -148 L132 -148 L120 -126 L134 -112 L116 -102 L2 -102 Z" fill="#F4B740" stroke="#B8860B" stroke-width="2.5"/>
+    <text x="62" y="-118" text-anchor="middle" font-family="Comic Neue, cursive" font-size="22" font-weight="800" fill="#7a5600">BEHAVIOR</text>
+  </g>
+  <!-- coin rolling away -->
+  <ellipse cx="1092" cy="384" rx="9" ry="17" fill="#FFCD00" stroke="#B8860B" stroke-width="3"/>
+  <g stroke="#B8860B" stroke-width="2.5" stroke-linecap="round" opacity="0.7"><path d="M1060 378 h-20"/><path d="M1064 392 h-28"/></g>
+  <!-- labels -->
+  <text x="790" y="150" font-family="Comic Neue, cursive" font-size="30" font-weight="800" fill="#B8860B">~50%: a coin flip<tspan font-size="16" dy="-12" fill="#6b7280"> [2]</tspan></text>
+</svg>

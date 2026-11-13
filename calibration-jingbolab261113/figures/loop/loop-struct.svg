@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 440" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+  <path d="M920 188 Q950 188 962 160" fill="none" stroke="#9ca3af" stroke-width="2.5"/>
+  <text x="960" y="120" font-size="22" font-family="Comic Neue, cursive" font-weight="800" fill="#333">Structured as:</text>
+  <g font-size="21" font-family="Comic Neue, cursive" fill="#4b5563" font-weight="700">
+    <text x="972" y="158">• scenario</text>
+    <text x="972" y="192">• target behavior</text>
+    <text x="972" y="226">• check</text>
+  </g>
+</svg>
