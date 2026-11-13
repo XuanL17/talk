@@ -43,7 +43,7 @@
 </div>
 
 <!-- ============ WHY CALIBRATE: PURPOSES ============ -->
-<div class="slide" data-slide="t-purpose" data-rw="1280" data-rh="720" data-notes="So why calibrate agent behavior? What is it for? A few examples. Can an agent stand in for a specific person — say, Jingbo? [click] Can a population of agents show how a crowd behaves? Like a crowd of students right here at UC San Diego: how does a crowd react, who joins, who walks past? [click] Can a character, in a game or a story, stay in character? [click] Even an object: a car like Lightning McQueen, a talking fridge, a smart device — each with its own way of behaving. [click] And many more. [click] And here is the key point. A simulation is not judged by how the target truly behaves — Mickey and Lightning McQueen do not exist, and even for Jingbo, an agent can only match what we know and believe about Jingbo's behavior. It is judged by how the people around it believe it behaves. That is what believability means, from Bates' believable agents in the 1990s to Generative Agents today.">
+<div class="slide" data-slide="t-purpose" data-rw="1280" data-rh="720" data-notes="So why calibrate agent behavior? What is it for? A few examples. Can a character, in a game or a story, stay in character? [click] Even an object: a car like Lightning McQueen, a talking fridge, a smart device — each with its own way of behaving. [click] Can a population of agents show how a crowd behaves? Like a crowd of students right here at UC San Diego: how does a crowd react, who joins, who walks past? [click] And can an agent stand in for a specific person — say, Jingbo? [click] And many more. [click] And here is the key point. A simulation is not judged by how the target truly behaves — Mickey and Lightning McQueen do not exist, and even for Jingbo, an agent can only match what we know and believe about Jingbo's behavior. It is judged by how the people around it believe it behaves. That is what believability means, from Bates' believable agents in the 1990s to Generative Agents today.">
 <h4 style="font-size:38px;">Why Calibrate <span style="color:var(--cobra);">Agent Behavior</span>?</h4>
 <style>
   .pp-card{flex:1; background:#f8f8f8; border-radius:12px; overflow:hidden; display:flex; flex-direction:column;}
@@ -53,8 +53,14 @@
 </style>
 <div style="margin-top:28px; display:flex; gap:16px; align-items:stretch; width:100%;">
   <div class="pp-card">
-    <img src="figures/purpose/jingbo-shang.jpg" alt="Jingbo Shang" style="object-position:50% 35%;">
-    <div class="pp-q">Simulate a person?</div>
+    <img src="figures/purpose/mickey.jpg" alt="Mickey Mouse in Steamboat Willie (1928)" style="object-position:60% 40%;">
+    <div class="pp-q">Simulate a character?</div>
+  </div>
+  <div class="cobra-fragment" style="flex:1; display:flex;">
+  <div class="pp-card">
+    <img src="figures/purpose/lightning-mcqueen.jpg" alt="Lightning McQueen from Cars" style="object-position:58% 50%;">
+    <div class="pp-q">Simulate an object?</div>
+  </div>
   </div>
   <div class="cobra-fragment" style="flex:1; display:flex;">
   <div class="pp-card">
@@ -64,14 +70,8 @@
   </div>
   <div class="cobra-fragment" style="flex:1; display:flex;">
   <div class="pp-card">
-    <img src="figures/purpose/mickey.jpg" alt="Mickey Mouse in Steamboat Willie (1928)" style="object-position:60% 40%;">
-    <div class="pp-q">Simulate a character?</div>
-  </div>
-  </div>
-  <div class="cobra-fragment" style="flex:1; display:flex;">
-  <div class="pp-card">
-    <img src="figures/purpose/lightning-mcqueen.jpg" alt="Lightning McQueen from Cars" style="object-position:58% 50%;">
-    <div class="pp-q">Simulate an object?</div>
+    <img src="figures/purpose/jingbo-shang.jpg" alt="Jingbo Shang" style="object-position:50% 35%;">
+    <div class="pp-q">Simulate a person?</div>
   </div>
   </div>
   <div class="cobra-fragment" style="flex:0 0 40px; display:flex; align-items:center; justify-content:center; font-size:44px; font-weight:800; color:var(--g400);">…</div>
@@ -142,7 +142,7 @@
 </div>
 
 <!-- ============ WHY NO VERIFIER FOR BEHAVIOR ============ -->
-<div class="slide" data-slide="t-whyhard" data-rw="1280" data-rh="720" data-notes="So why is closing this loop so hard for behavior? Three reasons. First, there is no single right answer. A person is not a math problem: behavior is a distribution, and it changes across people, contexts, and cultures. [click] Second, ground truth is scarce. Human studies are slow, expensive, and small, and complete data about any one person is almost impossible to get, for privacy and practical reasons. And for a character or an object, the ground truth lives in the stories and in what fans expect, scattered and never written down as data. [click] Third, and because of the first two, we end up judging believability by eye: we look at the agent and say it seems right. [click] So without a verifier, the loop is never closed. But that does not mean there is no ground truth at all.">
+<div class="slide" data-slide="t-whyhard" data-rw="1280" data-rh="720" data-notes="So why is closing this loop so hard for behavior? Two reasons. First, there is no single right answer. A person is not a math problem: behavior is a distribution, and it changes across people, contexts, and cultures. [click] Second, ground truth is scarce. Human studies are slow, expensive, and small, and complete data about any one person is almost impossible to get, for privacy and practical reasons. And for a character or an object, the ground truth lives in the stories and in what fans expect, scattered and never written down as data. [click] So without a verifier, the loop is never closed. But that does not mean there is no ground truth at all.">
 <h4 style="font-size:38px;">Why Is Closing the Loop <span style="color:#B8860B;">Hard</span>?</h4>
 <div style="margin-top:44px; display:flex; gap:24px; align-items:stretch;">
   <div style="flex:1; padding:24px 24px; background:#f8f8f8; border-radius:10px; border-top:4px solid #FBBF24;">
@@ -155,13 +155,6 @@
     <div style="font-size:60px; font-weight:700; color:#B8860B; line-height:1;">2</div>
     <div style="font-weight:700; font-size:31px; color:rgb(51,51,51); margin:10px 0 10px; line-height:1.2;">Scarce ground truth</div>
     <div style="font-size:23px; color:rgb(102,102,102); line-height:1.45;">Studies are small, full personal data is near-impossible to get, and characters live in stories.</div>
-  </div>
-  </div>
-  <div class="cobra-fragment" style="flex:1; display:flex;">
-  <div style="flex:1; width:100%; padding:24px 24px; background:#f8f8f8; border-radius:10px; border-top:4px solid #FBBF24;">
-    <div style="font-size:60px; font-weight:700; color:#B8860B; line-height:1;">3</div>
-    <div style="font-weight:700; font-size:31px; color:rgb(51,51,51); margin:10px 0 10px; line-height:1.2;">Judged by eye</div>
-    <div style="font-size:23px; color:rgb(102,102,102); line-height:1.45;">Believability is checked by looking at it: “seems right”.</div>
   </div>
   </div>
 </div>
